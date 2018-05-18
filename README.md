@@ -18,3 +18,11 @@ Then logic can be used with any UI on top? :)
 Standard Curses setup Made-
     but need a wrapper-
     if something breaks then because of the curses setup you wont see any useful de-bugging
+
+## `curses.wrapper()`
+Solves this issue and does all of the above resulting in:
++ Cleaner Code
++ Easier bug finding
++ Warm Fuzzies- much better
+
+Documentation implies that it works inplace of the above code, but does not explicitly say so.
