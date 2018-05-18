@@ -34,3 +34,11 @@ Quick `while` loop making sure the code is doing what we think it is.
 
 + `stdscr.addstr`
 + `stdscr.refresh()`
+
+# Get the Size Of Window
+
++ Add more text using `window.addstr`
++ A little while loop
++ next will bee setting the size of the window rather than just reading it.
++ resize terminal and check it is working
++ NOTE Curses has the paradigm y THEN x rather that the normal x,y order.
