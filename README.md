@@ -29,3 +29,8 @@ Documentation implies that it works inplace of the above code, but does not expl
 
 ## Prove the Code Works
 Quick `while` loop making sure the code is doing what we think it is.
+
+## Print Using Curses
+
++ `stdscr.addstr`
++ `stdscr.refresh()`

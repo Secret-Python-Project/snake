@@ -1,17 +1,17 @@
 import curses
 import time
-# from curses import wrapper
+from curses import wrapper
 
-# Demonstrate that the code is actually doing something with a simple while loop
+timer = 5
+welcome_message = "Welcome to SNAKE for: " + str(timer) + " seconds"
+
+
 def main(stdscr):
-    counter = 4
-    while counter > 0:
-        stdscr.clear()  # Clear screen
-        print("Running some program", counter, ' left to display')# This won't be seen as computers are quick.
-        print()
-        time.sleep(1)  # Now we will see it!
-        counter -= 1
-    print('printing all done')
+    stdscr.clear()  # Clear screen
+    stdscr.addstr(0, 0, welcome_message,
+                  curses.A_BOLD)
+    stdscr.refresh()  # Make sure that this goes before waiting for user inPut
+    time.sleep(timer)
 
 
-curses.wrapper(main)
+wrapper(main)
