@@ -26,3 +26,6 @@ Solves this issue and does all of the above resulting in:
 + Warm Fuzzies- much better
 
 Documentation implies that it works inplace of the above code, but does not explicitly say so.
+
+## Prove the Code Works
+Quick `while` loop making sure the code is doing what we think it is.
