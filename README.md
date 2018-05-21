@@ -60,4 +60,7 @@ Quick `while` loop making sure the code is doing what we think it is.
 
 + Make piece of food appear every x secs
 
-## Make Food Colour?
+## Place Snake Head in Centre,  Add Border
+
++ using `window.box`
++ Place head in centre of play area
