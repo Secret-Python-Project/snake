@@ -56,3 +56,8 @@ Quick `while` loop making sure the code is doing what we think it is.
 + Do it slowly so we can see it happen
 + column or row first doesn't matter
 
+## Place "Food" In Random Place
+
++ Make piece of food appear every x secs
+
+## Make Food Colour?
