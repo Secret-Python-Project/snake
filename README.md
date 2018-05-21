@@ -50,3 +50,9 @@ Quick `while` loop making sure the code is doing what we think it is.
 + `curses.newwin()` and use set values of y and x
 + remember that we are talking about column height and row not pixels ;-)
 
+## Fill Screen Space
+
++ Fill up window space with a symbol
++ Do it slowly so we can see it happen
++ column or row first doesn't matter
+
