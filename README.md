@@ -64,3 +64,8 @@ Quick `while` loop making sure the code is doing what we think it is.
 
 + using `window.box`
 + Place head in centre of play area
+
+## Create and Use class snake()
+
++ Create a snake class
++ Place snake head from class
