@@ -25,10 +25,11 @@
       <file leaf-file-name="snake.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snake.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="79">
+              <caret line="70" column="116" selection-start-line="70" selection-start-column="116" selection-end-line="70" selection-end-column="116" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#956#1434#0" />
               </folding>
             </state>
           </provider>
@@ -158,7 +159,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49930555" visible="true" weight="0.5882353" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49930555" visible="true" weight="0.7419786" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39976415" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -201,6 +202,7 @@
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#956#1434#0" />
           </folding>
         </state>
       </provider>
@@ -225,6 +227,7 @@
           <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#956#1434#0" />
           </folding>
         </state>
       </provider>
@@ -242,6 +245,7 @@
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#956#1434#0" />
           </folding>
         </state>
       </provider>
@@ -278,10 +282,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/snake.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="79">
+          <caret line="70" column="116" selection-start-line="70" selection-start-column="116" selection-end-line="70" selection-end-column="116" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#956#1434#0" />
           </folding>
         </state>
       </provider>

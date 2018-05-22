@@ -5,6 +5,7 @@ from random import randint
 play_space_h = 20
 play_space_w = 40
 timer = 2000
+game_tick = 500
 
 
 class Snake():  # A class is needed so that we can spawn a new snake object in our game, perhaps when Life Lost?
@@ -44,9 +45,9 @@ def make_food(game_window):
 
 def move_snake_with_user_input(game_window):
     key = game_window.getch()
-
+    valid_inputs = ['w', 'a', 's', 'd']
     if key == ord('w'):
-        Snake.head_coords = [Snake.head_y - 1, Snake.head_x]
+        Snake.head_coords = [Snake.head_y -1, Snake.head_x]
         Snake.head_y -= 1
         check_for_collision(game_window)
 
@@ -67,6 +68,9 @@ def move_snake_with_user_input(game_window):
 
 
 def check_for_collision(game_window):  # List of death conditions
+    if Snake.head_x == 0 or Snake.head_x == play_space_w - 1 or Snake.head_y == 0 or Snake.head_y == play_space_h - 1:
+        curses.endwin()
+        quit()
     return # TODO make this do something
 
 
