@@ -77,3 +77,5 @@ Quick `while` loop making sure the code is doing what we think it is.
 + Popped UserInput into its own function
 + Get Co-ordinates of Head
 
+## Make Head Co-ordinates A Property of the Snake Class
+

@@ -10,6 +10,8 @@ timer = 2000
 class Snake():  # A class is needed so that we can spawn a new snake object in our game, perhaps when Life Lost?
     head = '@'  # A class variable shared by all instances
     body = 'o'
+    head_coords = int(play_space_h / 2), int(play_space_w / 2)
+
     def snake_body(self):
         body_pieces = []  # Attribute specific to this snake
 
@@ -17,8 +19,8 @@ def main(game_window):
     game_window = curses.newwin(play_space_h, play_space_w)
     game_window.clear()  # Clear screen before the loop
     while True:
-        game_window.addstr(int(play_space_h/2), int(play_space_w/2), Snake.head)  # Inital Starting Position
-        head_coords = int(play_space_h/2), int(play_space_w/2) # Inital head codinates can these be in snake class as theyre the same for all snakes?
+        game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)  # Inital Starting Position
+
         #make_food(game_window)  # Removed from running for the moment
         game_window.refresh()
         move_snake(game_window)
@@ -42,6 +44,7 @@ def move_snake(game_window):
     # User Input testing
     key = game_window.getch()
     if key == ord('w'):
-        curses.endwin()  # Should go back to the terminal
+        print('w pressed')# when w is pressed increase the Y co-ordinate of the snake head
+
 
 wrapper(main)
