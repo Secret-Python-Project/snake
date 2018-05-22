@@ -69,3 +69,6 @@ Quick `while` loop making sure the code is doing what we think it is.
 
 + Create a snake class
 + Place snake head from class
+
+## Get User Input
++ Do something with user input for testing
