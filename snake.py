@@ -2,6 +2,7 @@ import curses
 from curses import wrapper
 from random import randint
 
+
 play_space_h = 20
 play_space_w = 40
 timer = 2000
@@ -46,15 +47,19 @@ def move_snake_with_user_input(game_window):
 
     if key == ord('w'):
         Snake.head_coords = [Snake.head_y - 1, Snake.head_x]
+        Snake.head_y -= 1
 
     elif key == ord('s'):
         Snake.head_coords = [Snake.head_y + 1, Snake.head_x]
+        Snake.head_y += 1
 
     elif key == ord('a'):
         Snake.head_coords = [Snake.head_y, Snake.head_x - 1]
+        Snake.head_x -= 1
 
     elif key == ord('d'):
         Snake.head_coords = [Snake.head_y, Snake.head_x + 1]
+        Snake.head_x += 1
 
 
 wrapper(main)
