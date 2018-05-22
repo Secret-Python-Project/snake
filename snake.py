@@ -11,6 +11,10 @@ class Snake():  # A class is needed so that we can spawn a new snake object in o
     head = '@'  # A class variable shared by all instances
     body = 'o'
     head_coords = int(play_space_h / 2), int(play_space_w / 2)
+    head_y = head_coords[0]
+    head_x = head_coords[1]
+    print(head_y)
+    print(head_x)
 
     def snake_body(self):
         body_pieces = []  # Attribute specific to this snake
@@ -24,7 +28,6 @@ def main(game_window):
         #make_food(game_window)  # Removed from running for the moment
         game_window.refresh()
         move_snake(game_window)
-        curses.napms(1000) # So we can see it happening
 
 
 def make_food(game_window):
@@ -43,8 +46,8 @@ def make_food(game_window):
 def move_snake(game_window):
     # User Input testing
     key = game_window.getch()
+    new_coords = [0,0]
     if key == ord('w'):
-        print('w pressed')# when w is pressed increase the Y co-ordinate of the snake head
-
+        Snake.head_coords = new_coords # Change coords when key pressed to new_coords
 
 wrapper(main)
