@@ -21,8 +21,9 @@ class Snake():  # A class is needed so that we can spawn a new snake object in o
 
 def main(game_window):
     game_window = curses.newwin(play_space_h, play_space_w)
-    game_window.clear()  # Clear screen before the loop
+
     while True:
+        game_window.clear()  # Clear screen before the loop means all elements have to load in every loop Good or Bad?
         game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)  # Inital Starting Position
 
         #make_food(game_window)  # Removed from running for the moment

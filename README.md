@@ -80,3 +80,6 @@ Quick `while` loop making sure the code is doing what we think it is.
 ## Make Head Co-ordinates A Property of the Snake Class
 
 ## Change Head Co-ordindates On Key Press
+
+## Remove Old Head Position
++ game_window.clear() moved to beginning of game loop
