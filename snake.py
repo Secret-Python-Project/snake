@@ -24,11 +24,12 @@ def main(game_window):
 
     while True:
         game_window.clear()  # Clear screen before the loop means all elements have to load in every loop Good or Bad?
-        game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)  # Inital Starting Position
+        game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)
 
         #make_food(game_window)  # Removed from running for the moment
-        game_window.refresh()
         move_snake(game_window)
+        game_window.refresh()
+
 
 
 def make_food(game_window):
@@ -49,6 +50,19 @@ def move_snake(game_window):
     key = game_window.getch()
     new_coords = [0,0]
     if key == ord('w'):
+        new_coords = [Snake.head_y - 1, Snake.head_x]
         Snake.head_coords = new_coords # Change coords when key pressed to new_coords
+
+    elif key == ord('s'):
+        new_coords = [Snake.head_y + 1, Snake.head_x]
+        Snake.head_coords = new_coords
+
+    elif key == ord('a'):
+        new_coords = [Snake.head_y, Snake.head_x - 1]
+        Snake.head_coords = new_coords
+
+    elif key == ord('d'):
+        new_coords = [Snake.head_y, Snake.head_x + 1]
+        Snake.head_coords = new_coords
 
 wrapper(main)

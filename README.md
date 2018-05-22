@@ -83,3 +83,6 @@ Quick `while` loop making sure the code is doing what we think it is.
 
 ## Remove Old Head Position
 + game_window.clear() moved to beginning of game loop
+
+## Move Snake Head One Space
++ Only moving one position at the moment
