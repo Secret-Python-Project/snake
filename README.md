@@ -72,3 +72,8 @@ Quick `while` loop making sure the code is doing what we think it is.
 
 ## Get User Input
 + Do something with user input for testing
+
+## Head Coordinates
++ Popped UserInput into its own function
++ Get Co-ordinates of Head
+
