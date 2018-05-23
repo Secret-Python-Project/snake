@@ -2,16 +2,18 @@ import curses
 from curses import wrapper
 from random import randint
 
+# Game Configuration
 play_space_h = 20
 play_space_w = 40
 timer = 2000
 game_tick = 200
 
-
 class Snake:  # A class is needed so that we can spawn a new snake object in our game, perhaps when Life Lost?
     head = 'O'  # A class variable shared by all instances
     body = 'o'
-    lives = 3
+
+    START_LIVES = 5
+
     head_coords = int(play_space_h / 2), int(play_space_w / 2)
     head_y = head_coords[0]
     head_x = head_coords[1]
@@ -19,9 +21,8 @@ class Snake:  # A class is needed so that we can spawn a new snake object in our
 
 
     def snake_body(self):
-
         body_pieces = []  # Attribute specific to this snake
-
+        lives = 3
 
 def play_game(game_window):
     game_window = curses.newwin(play_space_h, play_space_w)
@@ -31,8 +32,7 @@ def play_game(game_window):
 
     while True:
         get_user_direction(game_window)
-        keep_moving(game_window)
-        game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)
+        move_snake_head(game_window)
         check_for_collision(game_window)
         game_window.refresh()
         # make_food(game_window)  # Removed from running for the moment
@@ -67,7 +67,7 @@ def get_user_direction(game_window):
         Snake.direction = 'right'
 
 
-def keep_moving(game_window):
+def move_snake_head(game_window):
 
     if Snake.direction == 'up':
         Snake.head_y -= 1
@@ -88,6 +88,8 @@ def keep_moving(game_window):
         Snake.head_x += 1
         print(Snake.direction)
         print(Snake.head_x)
+
+    game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)
 
 
 def check_for_collision(game_window):  # List of death conditions
