@@ -14,25 +14,55 @@ class Snake:  # A class is needed so that we can spawn a new snake object in our
 
     START_LIVES = 5
 
-    head_coords = int(play_space_h / 2), int(play_space_w / 2)
-    head_y = head_coords[0]
-    head_x = head_coords[1]
-    direction = 'up'  #  Choose between default direction or none
+    def __init__(self):
+        self.lives = self.START_LIVES
+        self.head_coords = int(play_space_h / 2), int(play_space_w / 2)
+        self.head_y = self.head_coords[0]
+        self.head_x = self.head_coords[1]
+        self.direction = 'up'  #  Choose between default direction or none
 
+    def set_direction(self, direction):
+        self.direction = direction
+
+    def move_snake_head(self, game_window):
+
+        if self.direction == 'up':
+            self.head_y -= 1
+            print(self.direction)
+            print(self.head_y)
+
+        elif self.direction == 'down':
+            self.head_y += 1
+            print(self.direction)
+            print(self.head_y)
+
+        elif self.direction == 'left':
+            self.head_x -= 1
+            print(self.direction)
+            print(self.head_x)
+
+        elif self.direction == 'right':
+            self.head_x += 1
+            print(self.direction)
+            print(self.head_x)
+
+        game_window.addstr(self.head_coords[0], self.head_coords[1], self.head)
 
     def snake_body(self):
         body_pieces = []  # Attribute specific to this snake
         lives = 3
 
-def play_game(game_window):
+
+def play_game(main_window):
     game_window = curses.newwin(play_space_h, play_space_w)
     game_window.clear()  # Clear screen before the loop means all elements have to load in every loop Good or Bad?  a
     game_window.box()  # Added a border
-    game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)  # Starting position
+    the_snake = Snake()
+    game_window.addstr(the_snake.head_coords[0], the_snake.head_coords[1], the_snake.head)  # Starting position
 
     while True:
-        get_user_direction(game_window)
-        move_snake_head(game_window)
+        the_snake.set_direction(get_user_direction(game_window))
+        the_snake.move_snake_head(game_window)
         check_for_collision(game_window)
         game_window.refresh()
         # make_food(game_window)  # Removed from running for the moment
@@ -55,45 +85,20 @@ def get_user_direction(game_window):
     key = game_window.getch()
 
     if key == ord('w'):
-        Snake.direction = 'up'
+        return 'up'
 
     elif key == ord('s'):
-        Snake.direction = 'down'
+        return 'down'
 
     elif key == ord('a'):
-        Snake.direction = 'left'
+        return 'left'
 
     elif key == ord('d'):
-        Snake.direction = 'right'
-
-
-def move_snake_head(game_window):
-
-    if Snake.direction == 'up':
-        Snake.head_y -= 1
-        print(Snake.direction)
-        print(Snake.head_y)
-
-    elif Snake.direction == 'down':
-        Snake.head_y += 1
-        print(Snake.direction)
-        print(Snake.head_y)
-
-    elif Snake.direction == 'left':
-        Snake.head_x -= 1
-        print(Snake.direction)
-        print(Snake.head_x)
-
-    elif Snake.direction == 'right':
-        Snake.head_x += 1
-        print(Snake.direction)
-        print(Snake.head_x)
-
-    game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)
+        return 'right'
 
 
 def check_for_collision(game_window):  # List of death conditions
-    if Snake.head_x == 0 or Snake.head_x == play_space_w - 1 or Snake.head_y == 0 or Snake.head_y == play_space_h - 1:
+    if the_snake.head_x 0 or the_snake.head_x == play_space_w - 1 or Snake.head_y == 0 or Snake.head_y == play_space_h - 1:
         curses.endwin()
         quit()
     return # TODO make this do something
