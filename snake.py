@@ -70,10 +70,29 @@ def get_user_direction(game_window):
 
 def keep_moving(game_window):
 
-    while Snake.direction == 'up':
+    if Snake.direction == 'up':
         get_user_direction(game_window)
-        Snake.head_y -=1
+        Snake.head_y -= 1
         print(Snake.direction)
+        print(Snake.head_y)
+
+    elif Snake.direction == 'down':
+        get_user_direction(game_window)
+        Snake.head_y += 1
+        print(Snake.direction)
+        print(Snake.head_y)
+
+    elif Snake.direction == 'left':
+        get_user_direction(game_window)
+        Snake.head_x -= 1
+        print(Snake.direction)
+        print(Snake.head_x)
+
+    elif Snake.direction == 'right':
+        get_user_direction(game_window)
+        Snake.head_x += 1
+        print(Snake.direction)
+        print(Snake.head_x)
 
 def check_for_collision(game_window):  # List of death conditions
     if Snake.head_x == 0 or Snake.head_x == play_space_w - 1 or Snake.head_y == 0 or Snake.head_y == play_space_h - 1:
