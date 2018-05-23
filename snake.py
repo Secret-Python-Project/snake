@@ -6,7 +6,7 @@ from random import randint
 play_space_h = 20
 play_space_w = 40
 timer = 2000
-game_tick = 200
+game_tick = 100
 
 class Snake:  # A class is needed so that we can spawn a new snake object in our game, perhaps when Life Lost?
     head = 'O'  # A class variable shared by all instances
@@ -28,23 +28,19 @@ class Snake:  # A class is needed so that we can spawn a new snake object in our
 
         if self.direction == 'up':
             self.head_y -= 1
-            print(self.direction)
-            print(self.head_y)
+            self.head_coords = int(self.head_y), int(self.head_x)
 
         elif self.direction == 'down':
             self.head_y += 1
-            print(self.direction)
-            print(self.head_y)
+            self.head_coords = int(self.head_y), int(self.head_x)
 
         elif self.direction == 'left':
             self.head_x -= 1
-            print(self.direction)
-            print(self.head_x)
+            self.head_coords = int(self.head_y), int(self.head_x)
 
         elif self.direction == 'right':
             self.head_x += 1
-            print(self.direction)
-            print(self.head_x)
+            self.head_coords = int(self.head_y), int(self.head_x)
 
     def check_for_bad_collision(self):  # List of death conditions
         if self.head_x == 0 or self.head_x == play_space_w - 1 or self.head_y == 0 or self.head_y == play_space_h - 1:
@@ -54,20 +50,18 @@ class Snake:  # A class is needed so that we can spawn a new snake object in our
         body_pieces = []  # Attribute specific to this snake
 
 
-
 def play_game(main_window):
     game_window = curses.newwin(play_space_h, play_space_w)
-    game_window.clear()  # Clear screen before the loop means all elements have to load in every loop Good or Bad?  a
-    game_window.box()  # Added a border
     the_snake = Snake()
-    render_snake_position(the_snake, game_window)  # Starting position
-
+    render_snake_position(the_snake, game_window)
     while the_snake.lives >= 1:
+        curses.napms(game_tick)
+        game_window.clear()  # Clear screen before the loop means all elements have to load in every loop Good or Bad?  a
+        game_window.box()  # Added a border
+        render_snake_position(the_snake, game_window)
         the_snake.set_direction(get_user_direction(game_window))
         the_snake.move_snake_head(game_window)
-        the_snake.check_for_bad_collision()
-        game_window.addstr(the_snake.head_coords[0], the_snake.head_coords[1], the_snake.head)
-        game_window.refresh()
+        #game_window.refresh() not needed as getch() refreshes the screen
 
         # make_food(game_window)  # Removed from running for the moment
         #curses.napms(game_tick)
@@ -87,6 +81,7 @@ def make_food(game_window):
 
 
 def get_user_direction(game_window):
+    game_window.nodelay(1)
     key = game_window.getch()
 
     if key == ord('w'):
@@ -102,11 +97,9 @@ def get_user_direction(game_window):
         return 'right'
 
 
-    return # TODO make this do something
-
-
 def render_snake_position(the_snake, game_window):
     game_window.addstr(the_snake.head_coords[0], the_snake.head_coords[1], the_snake.head)
+
 
 if __name__ == "__main__":
     wrapper(play_game)
