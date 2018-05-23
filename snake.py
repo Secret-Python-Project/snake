@@ -33,8 +33,9 @@ def play_game(game_window):
         get_user_direction(game_window)
         keep_moving(game_window)
         game_window.addstr(Snake.head_coords[0], Snake.head_coords[1], Snake.head)
+        check_for_collision(game_window)
+        game_window.refresh()
         # make_food(game_window)  # Removed from running for the moment
-        #keep_moving(direction)
         #curses.napms(game_tick)
 
 
@@ -59,10 +60,8 @@ def get_user_direction(game_window):
     elif key == ord('s'):
         Snake.direction = 'down'
 
-
     elif key == ord('a'):
         Snake.direction = 'left'
-
 
     elif key == ord('d'):
         Snake.direction = 'right'
@@ -71,28 +70,25 @@ def get_user_direction(game_window):
 def keep_moving(game_window):
 
     if Snake.direction == 'up':
-        get_user_direction(game_window)
         Snake.head_y -= 1
         print(Snake.direction)
         print(Snake.head_y)
 
     elif Snake.direction == 'down':
-        get_user_direction(game_window)
         Snake.head_y += 1
         print(Snake.direction)
         print(Snake.head_y)
 
     elif Snake.direction == 'left':
-        get_user_direction(game_window)
         Snake.head_x -= 1
         print(Snake.direction)
         print(Snake.head_x)
 
     elif Snake.direction == 'right':
-        get_user_direction(game_window)
         Snake.head_x += 1
         print(Snake.direction)
         print(Snake.head_x)
+
 
 def check_for_collision(game_window):  # List of death conditions
     if Snake.head_x == 0 or Snake.head_x == play_space_w - 1 or Snake.head_y == 0 or Snake.head_y == play_space_h - 1:
