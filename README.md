@@ -1,5 +1,16 @@
-Snake Prototype
+#Snake Prototype
 Candidate project for Python Course
+
+
+### Re-writing in Pygame
++ `requirements.txt` updated to only have used modules
++ new `pygame_snake.py` file made for port
++ Removed unused `.py` files
+
+
+=########################=
+
+### *Below is old structure based on `curses`*
 
 ## Setup Project
 Adding Curses External Library
@@ -86,3 +97,5 @@ Quick `while` loop making sure the code is doing what we think it is.
 
 ## Move Snake Head One Space
 + Only moving one position at the moment
+
+
